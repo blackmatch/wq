@@ -1,0 +1,33 @@
+{
+  "name": "wq",
+  "version": "0.0.1",
+  "description": "Weather Query command line tool in China.",
+  "main": "index.js",
+  "scripts": {
+    "test": "tsc && ava -v ./build/test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blackmatch/wq.git"
+  },
+  "keywords": [
+    "weather",
+    "China",
+    "query"
+  ],
+  "author": "blackmatch <coder.blackmatch@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blackmatch/wq/issues"
+  },
+  "homepage": "https://github.com/blackmatch/wq#readme",
+  "dependencies": {
+    "@types/cheerio": "^0.22.11",
+    "@types/request": "^2.48.1",
+    "cheerio": "^1.0.0-rc.2",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "ava": "^1.3.1"
+  }
+}
