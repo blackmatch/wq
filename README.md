@@ -1,5 +1,7 @@
 # wq
 
+[![NPM version][npm-image]][npm-url]
+
 Weather Query Command line tool in China.查询国内天气情况的终端工具。
 
 ## 特性
@@ -41,3 +43,6 @@ wq 上海
 ## 协议
 
 MIT
+
+[npm-image]: https://img.shields.io/npm/v/wq-cli.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/wq-cli
