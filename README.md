@@ -21,11 +21,13 @@ wq <city>
 ```
 
 示例：
+
 ```shell
 wq 上海
 ```
 
 结果：
+
 ![demo](./images/demo.png)
 
 ## 声明
