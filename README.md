@@ -16,8 +16,12 @@ npm install wq-cli -g
 
 ## 使用
 
-```shell
-wq <city>
+```
+Usage: wq <city>
+
+Options:
+  -V, --version  output the version number
+  -h, --help     output usage information
 ```
 
 示例：
