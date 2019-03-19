@@ -1,5 +1,7 @@
 import test from "ava";
 import Crawler from "../src/lib/crawler";
+import "../src/lib/model";
+import { print } from "../src/lib/utils";
 
 const cl = new Crawler();
 
@@ -44,8 +46,6 @@ test("^^ should be \"\"", async (t) => {
 });
 
 test("weather info", async (t) => {
-  const info: any = await cl.queryWeather("101020600");
-  console.log(info);
-  // t.is(info.length, 7);
-  t.pass();
+  const info: IWeatherInfo = await cl.queryWeather("101020600");
+  t.is(info.data.length, 7);
 });

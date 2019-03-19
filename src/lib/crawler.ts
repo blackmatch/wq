@@ -73,8 +73,9 @@ class Crawler {
       });
     }
 
-    const elem2: any = $(".ctop.clearfix .time.fr").text();
-    console.log(elem2);
+    const updateStr: string = $('#update_time').attr('value');
+    otherInfo.updatedAt = updateStr + "更新";
+
     return otherInfo;
   }
 
