@@ -1,18 +1,18 @@
 #!/usr/bin/env node
 
 import program from "commander";
-import { query } from "../index";
-import { print } from "../lib/utils";
-import "../lib/model";
 import pkg from "../../package.json";
+import { query } from "../index";
+import "../lib/model";
+import { print } from "../lib/utils";
 
 program
   .version(pkg.version)
   .usage("<city>")
   .arguments("<city>")
-  .action(async function(city: string): Promise<any> {
+  .action(async (city: string): Promise<any> => {
     if (city && city.trim().length > 0) {
-      const wInfo:IWeatherInfo = await query(city);
+      const wInfo: IWeatherInfo = await query(city);
       print(wInfo);
     } else {
       program.outputHelp();
