@@ -61,16 +61,27 @@ class Crawler {
       city: "",
       updatedAt: "",
     };
+    const cts: string[] = [];
     if (links.length > 0) {
       links.each((idx: number, e: any) => {
-        otherInfo.city += $(e).text();
+        const str: string = $(e).text();
+        if (str && str.trim().length > 0 && str.trim() !== ">") {
+          cts.push(str.trim());
+        }
       });
     }
     const spans: any = $(elem).find("span");
     if (spans.length > 0) {
       spans.each((idx: number, e: any) => {
-        otherInfo.city += $(e).text();
+        const str: string = $(e).text();
+        if (str && str.trim().length > 0 && str.trim() !== ">") {
+          cts.push(str.trim());
+        }
       });
+    }
+
+    if (cts.length > 0) {
+      otherInfo.city = cts.join(">");
     }
 
     const updateStr: string = $('#update_time').attr('value');
