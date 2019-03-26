@@ -13,7 +13,7 @@ Weather Query Command Line Tool in China.查询国内天气情况的终端工具
 ## 安装
 
 ```shell
-npm install wq-cli -g
+sudo npm install wq-cli -g
 ```
 
 ## 使用
@@ -35,6 +35,26 @@ wq 上海
 结果：
 
 ![demo](./images/demo.png)
+
+示例：
+
+```shell
+wq 浦东
+```
+
+结果：
+
+![demo2](./images/demo2.jpg)
+
+示例：
+
+```shell
+wq xxxx
+```
+
+结果：
+
+![demo3](./images/demo3.jpg)
 
 ## 声明
 
