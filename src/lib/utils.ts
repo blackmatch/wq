@@ -45,7 +45,7 @@ function print(wInfo: IWeatherInfo): void {
     }
     console.log( spaces + "=========================================");
   } else {
-    console.log("很抱歉，无法查询到相关天气信息！");
+    console.log(colors.red("很抱歉，无法查询到相关天气信息！"));
   }
 }
 
