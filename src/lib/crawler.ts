@@ -23,7 +23,7 @@ class Crawler {
     }
   }
 
-  public queryWeather(cityCode: string): Promise<IWeatherInfo> {
+  public queryWeather(cityCode: string): Promise<wq.blackmatch.cn.IWeatherInfo> {
     if (cityCode.trim().length > 0) {
       return new Promise((resove, reject) => {
         const webUrl = `http://www.weather.com.cn/weather/${cityCode}.shtml`;
@@ -31,9 +31,9 @@ class Crawler {
           if (err) {
             reject(err);
           } else {
-            const ws: IWeatherData[] = this.getWeatherInfoFromBody(body);
-            const other: IOtherData = this.getOtherDataFromBody(body);
-            const wInfo: IWeatherInfo = {
+            const ws: wq.blackmatch.cn.IWeatherData[] = this.getWeatherInfoFromBody(body);
+            const other: wq.blackmatch.cn.IOtherData = this.getOtherDataFromBody(body);
+            const wInfo: wq.blackmatch.cn.IWeatherInfo = {
               data: ws,
               otherData: other,
             };
@@ -42,7 +42,7 @@ class Crawler {
         });
       });
     } else {
-      const wInfo: IWeatherInfo = {
+      const wInfo: wq.blackmatch.cn.IWeatherInfo = {
         data: [],
         otherData: {
           city: "",
@@ -53,11 +53,11 @@ class Crawler {
     }
   }
 
-  private getOtherDataFromBody(body: string): IOtherData {
+  private getOtherDataFromBody(body: string): wq.blackmatch.cn.IOtherData {
     const $: any = cheerio.load(body);
     const elem: any = $(".ctop.clearfix .crumbs.fl");
     const links: any = $(elem).find("a");
-    const otherInfo: IOtherData = {
+    const otherInfo: wq.blackmatch.cn.IOtherData = {
       city: "",
       updatedAt: "",
     };
@@ -90,13 +90,13 @@ class Crawler {
     return otherInfo;
   }
 
-  private getWeatherInfoFromBody(body: string): IWeatherData[] {
-    const ws: IWeatherData[] = [];
+  private getWeatherInfoFromBody(body: string): wq.blackmatch.cn.IWeatherData[] {
+    const ws: wq.blackmatch.cn.IWeatherData[] = [];
 
     const $: any = cheerio.load(body);
     const ls: any = $(".t.clearfix .sky.skyid");
     ls.each((idx: number, elem: any) => {
-      const info: IWeatherData = {
+      const info: wq.blackmatch.cn.IWeatherData = {
         dateStr: "",
         temperature: "",
         weather: "",

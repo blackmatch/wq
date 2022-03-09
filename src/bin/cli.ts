@@ -12,7 +12,7 @@ program
   .arguments("<city>")
   .action(async (city: string): Promise<any> => {
     if (city && city.trim().length > 0) {
-      const wInfo: IWeatherInfo = await query(city);
+      const wInfo: wq.blackmatch.cn.IWeatherInfo = await query(city);
       print(wInfo);
     } else {
       program.outputHelp();

@@ -25,7 +25,7 @@ function getColorFun(): any {
   }
 }
 
-function print(wInfo: IWeatherInfo): void {
+function print(wInfo: wq.blackmatch.cn.IWeatherInfo): void {
   if (wInfo.data.length > 0) {
     const spaces: string = "  ";
     let header: string = spaces + wInfo.otherData.city + spaces;
@@ -35,7 +35,7 @@ function print(wInfo: IWeatherInfo): void {
     console.log( spaces + "=========================================");
 
     for (let i: number = 0, iLen: number = wInfo.data.length; i < iLen; i += 1) {
-      const item: IWeatherData = wInfo.data[i];
+      const item: wq.blackmatch.cn.IWeatherData = wInfo.data[i];
       const str = spaces + item.dateStr + " " + item.weather + " "
         + item.temperature + " " + item.wind;
 

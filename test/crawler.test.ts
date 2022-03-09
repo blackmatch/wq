@@ -46,6 +46,6 @@ test("^^ should be \"\"", async (t) => {
 });
 
 test("weather info", async (t) => {
-  const info: IWeatherInfo = await cl.queryWeather("101020600");
+  const info: wq.blackmatch.cn.IWeatherInfo = await cl.queryWeather("101020600");
   t.is(info.data.length, 7);
 });
