@@ -3,4 +3,4 @@ node_modules/
 src/
 test/
 tsconfig.json
-tslint.json
+jest.config.js

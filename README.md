@@ -19,7 +19,7 @@ sudo npm install wq-cli -g
 ## 使用
 
 ```shell
-Usage: wq <city>
+Usage: wq <name>
 
 Options:
   -V, --version  output the version number
@@ -29,32 +29,12 @@ Options:
 示例：
 
 ```shell
-wq 上海
+wq 深圳
 ```
 
 结果：
 
-![demo](./images/demo.png)
-
-示例：
-
-```shell
-wq 浦东
-```
-
-结果：
-
-![demo2](./images/demo2.jpg)
-
-示例：
-
-```shell
-wq xxxx
-```
-
-结果：
-
-![demo3](./images/demo3.jpg)
+![demo](./images/demo.jpg)
 
 ## 声明
 

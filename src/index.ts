@@ -1,20 +1,9 @@
-import Crawler from "./lib/crawler";
-import "./lib/model";
+import {getCityCodeByName} from './location/index'
+import {getWeatherInfoByCityCode} from './weather/index'
 
-const cl = new Crawler();
+export const query = async (name: string): Promise<wq.blackmatch.cn.WeatherInfo[]> => {
+  const cityCode = await getCityCodeByName(name)
+  const weatherInfoList = await getWeatherInfoByCityCode(cityCode)
 
-function query(city: string): Promise<wq.blackmatch.cn.IWeatherInfo> {
-  return new Promise(async (resolve, reject) => {
-    try {
-      const cityCode: string = await cl.getCityCode(city);
-      const wInfo: wq.blackmatch.cn.IWeatherInfo = await cl.queryWeather(cityCode);
-      resolve(wInfo);
-    } catch (error) {
-      reject(error)
-    }
-  });
+  return weatherInfoList
 }
-
-export {
-  query,
-};
