@@ -13,7 +13,13 @@ Weather Query Command Line Tool in China.查询国内天气情况的终端工具
 ## 安装
 
 ```shell
-sudo npm install wq-cli -g
+sudo npm install -g wq-cli
+```
+
+或者
+
+```shell
+yarn global add wq-cli
 ```
 
 ## 使用
