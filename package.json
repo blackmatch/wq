@@ -8,7 +8,7 @@
     "build": "tsc --outDir ./dist",
     "cli-test": "yarn build && chmod +x ./dist/src/bin/cli.js && ./dist/src/bin/cli.js 深圳",
     "test": "yarn jest && yarn cli-test",
-    "prepare": "yarn test",
+    "prepare": "yarn test && husky install",
     "postinstall": "husky install",
     "prepack": "pinst --disable",
     "postpack": "pinst --enable"
@@ -42,7 +42,7 @@
     "eslint": "^8.11.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^16.1.1",
-    "husky": "^7.0.4",
+    "husky": "^7.0.0",
     "jest": "^27.5.1",
     "pinst": "^3.0.0",
     "ts-jest": "^27.1.3",
